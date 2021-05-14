@@ -14,7 +14,7 @@ def get_memory(obj):
     if hasattr(obj, '__iter__'):
         if hasattr(obj, 'items'):
             for key, value in obj.items():
-                result += get_memory(key)
+                result += sys.getsizeof(key)
                 result += get_memory(value)
         else:
             for item in obj:
