@@ -50,6 +50,29 @@ else:
 
 print(f'Вариант 1. Потрачено {sum}')    # 392
 
+# решение 2
+sum = 0
+
+result = 0
+position = -1
+
+for index, value in enumerate(array):
+    if value < 0:
+        if result == 0 or result < value:
+            result = value
+            position = index
+
+sum += get_memory(result)
+sum += get_memory(position)
+
+if result == 0:
+    print('В массиве нет отрицательных чисел')
+else:
+    print(f'Наибольшее отрицательное число {result} расположено в массиве под индексом {position}')
+
+print(f'Вариант 1. Потрачено {sum}')    # 56
+
 """
-Вывод будет дописан чуть позже
+Вывод: использовать простые переменные содержащие целые числа менее затратно по
+памяти, чем словари, тк тратится место еще и на ключи.
 """
