@@ -33,4 +33,4 @@ def my_sort(data):
 
     return data
 
-print(my_sort(array))    
+print(my_sort(array))
