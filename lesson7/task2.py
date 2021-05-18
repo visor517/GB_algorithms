@@ -18,8 +18,7 @@ def merge_sort(data):
     if len(data) > 1:
         L, R = merge_sort(data[:len(data) // 2]), merge_sort(data[len(data) // 2:])
 
-        i = 0
-        j = 0
+        i = j = 0
         result = []
 
         while len(result) < len(L) + len(R):

@@ -6,3 +6,31 @@
 массива. Но если это слишком сложно, то используйте метод сортировки, который
 не рассматривался на уроках
 """
+
+import random
+
+M_SIZE = 5
+MIN_ITEM = 0
+MAX_ITEM = 100
+array = [random.randint(MIN_ITEM, MAX_ITEM) for _ in range(2 * M_SIZE + 1)]
+
+print(array)
+ 
+# решение
+
+def get_median(data):
+    limit = len(data) // 2
+
+    for i in data:
+        L = R = 0
+
+        for j in data:
+            if j < i:
+                L += 1
+            if j > i:
+                R += 1
+        
+        if (L <= limit) and (R <= limit):
+            return i
+
+print(f'Медиана: {get_median(array)}')
